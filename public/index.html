@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1 class="mb-5 text-center text-uppercase">Task Manager</h1>
+    <div class="row">
+        <div class="container col-8">
+            <h2>Tasks List</h2>
+
+            <form name="filterForm" id="filterForm" autocomplete="off" class="form-inline input-group-sm">
+                <label class="my-1 mr-2">Filter tasks by status</label>
+                <select name="status" class="custom-select my-1 mr-sm-2">
+                    <option selected value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="in progress">In progress</option>
+                    <option value="expired">Expired</option>
+                </select>
+                <button type="submit" class="btn btn-outline-dark bg-light btn-sm">Filter</button>
+            </form>
+
+            <table class="table mt-3 table-sm table-bordered condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>File</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="container col-3">
+            <h2 id="formTitle">New Task:</h2>
+            <form name="taskForm" id="taskForm" autocomplete="off">
+                <input type="hidden" name="id" value="0" />
+                <div class="form-group input-group-sm">
+                    <label for="name">Name:</label>
+                    <input class="form-control" name="name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Choose file:</label>
+                    <input type="file" class="form-control-file control-file-sm" id="filedata" name="filedata">
+                </div>
+
+                <div class="form-group input-group-sm">
+                    <label for="date">Date:</label>
+                    <input class="form-control" name="date" />
+                </div>
+
+                <div class="form-group input-group-sm">
+                    <label for="status">Status:</label>
+                    <select name="status" class="custom-select custom-select-sm">
+                        <option value="completed">Completed</option>
+                        <option selected value="in progress">In progress</option>
+                        <option value="expired">Expired</option>
+                    </select>
+                </div>
+                <div class="panel-body">
+                    <button type="submit" class="btn btn-outline-dark bg-light btn-sm">Save</button>
+                    <button type="button" id="resetBtn" class="btn btn-outline-dark bg-light btn-sm">Reset</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="client.js"></script>
+
+</body>
+
+</html>
